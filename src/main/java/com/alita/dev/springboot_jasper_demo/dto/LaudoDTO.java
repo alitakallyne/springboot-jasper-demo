@@ -1,13 +1,16 @@
 package com.alita.dev.springboot_jasper_demo.dto;
 
-public record LaudoDTO(
-     String nome,
-     String cpf,
-     String dataNascimento,
-     String nomeExame,
-     String resultado,
-     String medicoResponsavel,
-     String dtLaudo
-) {
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
+@Data
+@AllArgsConstructor
+public class LaudoDTO {
+    private String nome;
+    private String cpf;
+    private String dataNascimento;
+    private String nomeExame;
+    private String resultado;
+    private String medicoResponsavel;
+    private String dtLaudo;
 }

@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
-              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
-              name="laudo_simples"
-              pageWidth="595"
-              pageHeight="842"
-              margin="20">
+<jasperReport
+    xmlns="http://jasperreports.sourceforge.net/jasperreports"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+                        http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+    name="laudo_simples"
+    pageWidth="595"
+    pageHeight="842"
+    columnWidth="555"
+    leftMargin="20"
+    rightMargin="20"
+    topMargin="20"
+    bottomMargin="20">
 
     <!-- PARAMETROS -->
     <parameter name="LOGO" class="java.io.InputStream"/>
-    <image isUsingCache="true" onErrorType="Blank">
-				<reportElement key="image-1" x="6" y="3" width="49" height="53" uuid="7fcf3237-8b7b-4be9-8f1f-f8950be9fc64"/>
-				<imageExpression><![CDATA["https://www.saomarcos.org.br/logo.png"]]></imageExpression>
-			</image>
 
     <!-- FIELDS -->
     <field name="nome" class="java.lang.String"/>
@@ -24,18 +25,20 @@
     <field name="medicoResponsavel" class="java.lang.String"/>
     <field name="dtLaudo" class="java.lang.String"/>
 
-    <!-- HEADER -->
+    <!-- PAGE HEADER -->
     <pageHeader>
         <band height="80">
-            <image>
+
+            <image onErrorType="Blank">
                 <reportElement x="0" y="0" width="80" height="50"/>
                 <imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
             </image>
 
             <staticText>
-                <reportElement x="100" y="10" width="400" height="20"/>
+                <reportElement x="100" y="15" width="400" height="20"/>
                 <text><![CDATA[Laudo de Exame]]></text>
             </staticText>
+
         </band>
     </pageHeader>
 
