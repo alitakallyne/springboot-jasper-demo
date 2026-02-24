@@ -10,6 +10,10 @@
 
     <!-- PARAMETROS -->
     <parameter name="LOGO" class="java.io.InputStream"/>
+    <image isUsingCache="true" onErrorType="Blank">
+				<reportElement key="image-1" x="6" y="3" width="49" height="53" uuid="7fcf3237-8b7b-4be9-8f1f-f8950be9fc64"/>
+				<imageExpression><![CDATA["https://www.saomarcos.org.br/logo.png"]]></imageExpression>
+			</image>
 
     <!-- FIELDS -->
     <field name="nome" class="java.lang.String"/>
