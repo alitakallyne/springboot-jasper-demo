@@ -27,19 +27,40 @@
 
     <!-- PAGE HEADER -->
     <pageHeader>
-        <band height="80">
+        <band height="70">
 
-            <image onErrorType="Blank">
-                <reportElement x="0" y="0" width="80" height="50"/>
-                <imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
-            </image>
+        <!-- LOGO -->
+        <image isUsingCache="true" onErrorType="Blank">
+            <reportElement x="6" y="5" width="49" height="53"/>
+            <imageExpression><![CDATA[
+"https://www.saomarcos.org.br/logo.png"
+            ]]></imageExpression>
+        </image>
 
-            <staticText>
-                <reportElement x="100" y="15" width="400" height="20"/>
-                <text><![CDATA[Laudo de Exame]]></text>
-            </staticText>
+        <!-- NOME DA INSTITUIÇÃO -->
+        <staticText>
+            <reportElement x="64" y="5" width="341" height="45"/>
+            <textElement>
+                <font size="16"/>
+            </textElement>
+            <text><![CDATA[
+            Associação Piauiense de Combate ao Câncer Hospital São Marcos]]></text>
+        </staticText>
 
-        </band>
+        <!-- DATA / HORA DE IMPRESSÃO -->
+        <textField>
+            <reportElement x="418" y="5" width="154" height="11"/>
+            <textElement textAlignment="Right" verticalAlignment="Bottom">
+                <font size="7"/>
+            </textElement>
+            <textFieldExpression><![CDATA[
+"Impressão em " +
+new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+    .format(new java.util.Date())
+            ]]></textFieldExpression>
+        </textField>
+
+    </band>
     </pageHeader>
 
     <!-- DETAIL -->
